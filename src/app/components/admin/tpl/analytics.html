@@ -3,19 +3,22 @@
         <div  class="box">
             <form>
                 <div class="input-block">
-                    <label for="name" class="title_case">From</label>
-                    <div class="filterStartDate" 
-                         datepicker="ctrl.stats.start_date" 
-                         maxdate="ctrl.stats.end_date"
-                         on-date-change="ctrl.get"
-                         datepicker-format="ctrl.dateFilter"></div>
+                    <label for="filterStartDate" class="title_case">From</label>
+                    <md-datepicker class="filterStartDate" 
+                        ng-model="ctrl.stats.start_date" 
+                        md-max-date="ctrl.stats.end_date"
+                        md-open-on-focus="true"
+                        ng-change="ctrl.get()"
+                    ></md-datepicker>
                 </div>
                 <div class="input-block">
-                    <label for="name" class="title_case">To</label>
-                    <div class="filterEndDate" 
-                         datepicker="ctrl.stats.end_date" 
-                         mindate="ctrl.stats.start_date"
-                         datepicker-format="ctrl.dateFilter"></div>
+                    <label for="filterEndDate" class="title_case">To</label>
+                    <md-datepicker class="filterEndDate" 
+                        ng-model="ctrl.stats.end_date" 
+                        md-min-date="ctrl.stats.start_date"
+                        md-open-on-focus="true"
+                        ng-change="ctrl.get()"
+                    ></md-datepicker>
                 </div>
                 <div class="input-block">
                     <label for="name" class="title_case">Step</label>

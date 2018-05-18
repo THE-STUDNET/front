@@ -149,21 +149,20 @@
                                  <form ng-submit="PageCtrl.editingDates = false;PageCtrl.updateDates(PageCtrl.tmp_start, PageCtrl.tmp_end);">
                                     <div class="input-block">
                                         <label for="start_date">From</label>
-                                        <div datepicker="PageCtrl.tmp_start"
-                                             datepicker-states="['year','month','day','time']"
-                                             datepicker-name="start_date"
-                                             required="true"
-                                             datepicker-build='PageCtrl.buildStart'
-                                             maxdate="PageCtrl.tmp_end"></div>
+                                        <md-datepicker 
+                                            ng-model="PageCtrl.tmp_start" 
+                                            md-max-date="PageCtrl.tmp_end"
+                                            md-open-on-focus="true"
+                                            ng-required="true"
+                                        ></md-datepicker>
                                     </div>
                                     <div class="input-block">
-                                        <label for="end_date">To</label>
-                                        <div datepicker="PageCtrl.tmp_end"
-                                             datepicker-states="['year','month','day','time']"
-                                             datepicker-name="start_date"
-                                             required="true"
-                                             datepicker-build='PageCtrl.buildEnd'
-                                             mindate="PageCtrl.tmp_start"></div>
+                                        <label for="end_date">To</label><md-datepicker 
+                                            ng-model="PageCtrl.tmp_end" 
+                                            md-min-date="PageCtrl.tmp_start"
+                                            md-open-on-focus="true"
+                                            ng-required="true"
+                                        ></md-datepicker>
                                     </div>
                                     <div class="ctas">
                                         <button type="submit" class="cta green"  title="Save dates edition"

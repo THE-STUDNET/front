@@ -1,9 +1,10 @@
 "use strict";
 
-angular.module('app',['ui.router', 'pascalprecht.translate','ngSanitize'].concat(ANGULAR_MODULES))
-    .config(['$urlRouterProvider', '$locationProvider', '$sceDelegateProvider', '$translateProvider',
-        function ($urlRouterProvider, $locationProvider, $sceDelegateProvider, $translateProvider ) {
+angular.module('app',['ui.router', 'pascalprecht.translate','ngSanitize', 'ngMaterial'].concat(ANGULAR_MODULES))
+    .config(['$urlRouterProvider', '$locationProvider', '$sceDelegateProvider', '$translateProvider', '$mdThemingProvider',
+        function ($urlRouterProvider, $locationProvider, $sceDelegateProvider, $translateProvider, $mdThemingProvider ) {
 
+       
             $locationProvider.html5Mode({ enabled: true });
 
             $urlRouterProvider.otherwise(function ($injector) {
@@ -24,6 +25,8 @@ angular.module('app',['ui.router', 'pascalprecht.translate','ngSanitize'].concat
                 prefix: 'assets/i18n/',
                 suffix: '.json'
             });
+            
+        
 
             // Not setting Strategy because of special characters... they're escaped...
             $translateProvider.useSanitizeValueStrategy('escape'); 

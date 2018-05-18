@@ -2,7 +2,7 @@
     <div>
         <div class="input-block">
             <label for="name">Degree</label>
-            <input type="text" id="name" name="name" ng-focus="ctrl.onEductionUpdate()" required ng-model="ctrl.edited_resume.title" />
+            <input type="text" id="name" name="name" required ng-model="ctrl.edited_resume.title" />
         </div>
         <div class="input-block">
             <label for="name">School</label>
@@ -11,22 +11,27 @@
     </div>
     <div>
         <div class="input-block">
-            <label for="diploma_start_date">From</label>
-            <div datepicker="ctrl.edited_resume.start_date" 
-                 datepicker-states="['year','month']"
-                 datepicker-name="diploma_start_date"
-                 datepicker-build="ctrl.onEductionUpdate"
-                 maxdate="ctrl.edited_resume.end_date"
-                 datepicker-format="ctrl.filters_functions.dateWithoutDay"></div>
+            <label for="diploma_start_date">From</label> 
+            <md-datepicker 
+                class="white"
+                ng-model="ctrl.edited_resume.start_date" 
+                md-max-date="ctrl.edited_resume.end_date"
+                md-open-on-focus="true"
+                ng-required="true"
+                md-mode="month"
+            ></md-datepicker>
         </div>
         <div class="input-block">
             <label for="diploma_end_date">To</label>
-            <div datepicker="ctrl.edited_resume.end_date" 
-                 datepicker-states="['year','month']"
-                 datepicker-name="diploma_end_date"
-                 mindate="ctrl.edited_resume.start_date"
-                 datepicker-format="ctrl.filters_functions.dateWithoutDay"
-                ng-if="ctrl.edited_resume && !ctrl.edited_resume.current"></div>
+            <md-datepicker 
+                class="white"
+                ng-model="ctrl.edited_resume.end_date" 
+                md-min-date="ctrl.edited_resume.start_date"
+                md-open-on-focus="true"
+                ng-required="true"
+                md-mode="month"
+                ng-if="ctrl.edited_resume && !ctrl.edited_resume.current"
+            ></md-datepicker>
             <input type="checkbox" id="diploma_current" 
                    focus-on-keys="#diploma_end_date" keys="[32]"
                    ng-model="ctrl.edited_resume.current"

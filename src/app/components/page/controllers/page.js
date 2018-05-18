@@ -192,8 +192,8 @@ angular.module('page').controller('page_controller',
            //EDITION
            ctrl.tmp_confidentiality = null;
            ctrl.editDates = function(){
-               ctrl.buildStart(page.datum.start_date);
-               ctrl.buildEnd(page.datum.end_date);
+               ctrl.tmp_start = new Date(page.datum.start_date);
+               ctrl.tmp_end = new Date(page.datum.end_date);
                ctrl.editingDates = ctrl.editable;
            };
 

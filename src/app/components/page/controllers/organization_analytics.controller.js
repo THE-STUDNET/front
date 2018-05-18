@@ -34,19 +34,17 @@ angular.module('page').controller('organization_analytics_controller',
             });
             ctrl.stats.organization_id = children.concat(page.datum.id);
             
-            ctrl.onstartchange = function(start){
-                start.setHours(0);
-                start.setMinutes(0);
-                start.setSeconds(0);
-                stats_service.start_date = start;
+            ctrl.onstartchange = function(){
+                ctrl.stats.start_date.setHours(0);
+                ctrl.stats.start_date.setMinutes(0);
+                ctrl.stats.start_date.setSeconds(0);
                 stats_service.reset();
                 ctrl.get();
             };
-            ctrl.onendchange = function(end){
-                end.setHours(23);
-                end.setMinutes(59);
-                end.setSeconds(59);
-                stats_service.end_date = end;
+            ctrl.onendchange = function(){
+                ctrl.stats.end_date.setHours(23);
+                ctrl.stats.end_date.setMinutes(59);
+                ctrl.stats.end_date.setSeconds(59);
                 stats_service.reset();
                 ctrl.get();
             };

@@ -9,10 +9,18 @@
 	</div>
 	<div class="box">
 		<form>
-			<div class="main input-block">
-				<div class="filterSearch">
-			  		<div class="filterStartDate" datepicker="ctrl.start_date" datepicker-format="ctrl.dateFilter"></div>
-			  		<div class="filterEndDate" datepicker="ctrl.end_date" datepicker-format="ctrl.dateFilter"></div>
+                    <div class="main input-block">
+                            <div class="filterSearch">
+                                <md-datepicker class="filterStartDate" 
+                                    ng-model="ctrl.start_date" 
+                                    md-max-date="ctrl.end_date"
+                                    md-open-on-focus="true"
+                                ></md-datepicker>
+                                <md-datepicker class="filterEndDate" 
+                                    ng-model="ctrl.end_date" 
+                                    md-max-date="ctrl.start_date"
+                                    md-open-on-focus="true"
+                                ></md-datepicker>
 	            </div>
 	            <div class="searchButton">
 		           	<button class="cta green buttonn" ng-click="ctrl.get()">Search</button>

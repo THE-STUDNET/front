@@ -73,20 +73,21 @@
                 <legend>Dates</legend>
                 <div class="input-block flex-block">
                     <label for="start_date" class="light">From*</label>
-                    <div datepicker="ctrl.scope.page.start_date"
-                         datepicker-states="['month', 'day', 'year', 'time']"
-                         mindate="ctrl.scope.current_date"
-                         maxdate="ctrl.scope.page.end_date"
-                         required="true"
-                         datepicker-name="start_date"></div>
+                     <md-datepicker class="filterStartDate" 
+                            ng-model="ctrl.scope.page.start_date" 
+                            md-max-date="ctrl.scope.page.end_date"
+                            md-open-on-focus="true"
+                            ng-required="true"
+                        ></md-datepicker>
                 </div>
                 <div class="input-block flex-block">
                     <label for="end_date" class="light">To*</label>
-                    <div datepicker="ctrl.scope.page.end_date" 
-                         datepicker-states="['month', 'day', 'year', 'time']"
-                         required="true"
-                         mindate="ctrl.scope.start_date || ctrl.scope.current_date"
-                         datepicker-name="end_date"></div>
+                     <md-datepicker class="filterStartDate" 
+                            ng-model="ctrl.scope.page.end_date" 
+                            md-min-date="ctrl.scope.page.start_date"
+                            md-open-on-focus="true"
+                            ng-required="true"
+                        ></md-datepicker>
                 </div>
             </fieldset> 
             <fieldset ng-if="ctrl.scope.isDisplayed(ctrl.scope.page_fields.address)">

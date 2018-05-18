@@ -1,47 +1,55 @@
-  <div class="col_left">
-        <div  class="box">
-            <form>
-                <div class="input-block">
-                    <label for="name" class="title_case">From</label>
-                    <div class="filterStartDate" 
-                         required="true"
-                         datepicker="ctrl.stats.start_date" 
-                         maxdate="ctrl.stats.end_date"
-                         on-date-change="ctrl.onstartchange"
-                         datepicker-format="ctrl.dateFilter"></div>
-                </div>
-                <div class="input-block">
-                    <label for="name" class="title_case">To</label>
-                    <div class="filterEndDate" 
-                         required="true"
-                         datepicker="ctrl.stats.end_date" 
-                         mindate="ctrl.stats.start_date"
-                         maxdate="ctrl.current_date"
-                         on-date-change="ctrl.onendchange"
-                         datepicker-format="ctrl.dateFilter"></div>
-                </div>
-            </form>
-        </div>
+    <div class="col_left">
+      <div class="sticky">
+            <div  class="box">
+                <form layout="column">
+                    <div class="input-block">
+                        <label for="filterStartDate" 
+                            class="title_case">From</label>
+                        <md-datepicker class="filterStartDate" 
+                            ng-model="ctrl.stats.start_date" 
+                            md-max-date="ctrl.stats.end_date"
+                            md-open-on-focus="true"
+                            ng-required="true"
+                            ng-change="ctrl.onstartchange()"
+                        ></md-datepicker>
+                    </div>
+                    <div class="input-block">
+                        <label for="filterEndDate" 
+                            class="title_case">To</label>
+                        <md-datepicker class="filterEndDate" 
+                            ng-model="ctrl.stats.end_date" 
+                            md-min-date="ctrl.stats.start_date"
+                            md-open-on-focus="true"
+                            ng-change="ctrl.onendchange()"
+                            ng-required="true"
+                        ></md-datepicker>
+                    </div>
+                </form>
+            </div>
+      </div>
     </div>
     <div class="col_center" >
         <div  class="box mobile">
             <form>
                 <div class="input-block">
                     <label for="name" class="title_case">From</label>
-                    <div class="filterStartDate" 
-                         datepicker="ctrl.stats.start_date" 
-                         maxdate="ctrl.stats.end_date"
-                         on-date-change="ctrl.onstartchange"
-                         datepicker-format="ctrl.dateFilter"></div>
+                    <md-datepicker class="filterStartDate" 
+                        ng-model="ctrl.stats.start_date" 
+                        md-max-date="ctrl.stats.end_date"
+                        md-open-on-focus="true"
+                        ng-required="true"
+                        ng-change="ctrl.onstartchange()"
+                    ></md-datepicker>
                 </div>
                 <div class="input-block">
                     <label for="name" class="title_case">To</label>
-                    <div class="filterEndDate" 
-                         datepicker="ctrl.stats.end_date" 
-                         mindate="ctrl.stats.start_date"
-                         maxdate="ctrl.current_date"
-                         on-date-change="ctrl.onendchange"
-                         datepicker-format="ctrl.dateFilter"></div>
+                    <md-datepicker class="filterEndDate" 
+                        ng-model="ctrl.stats.end_date" 
+                        md-min-date="ctrl.stats.start_date"
+                        md-open-on-focus="true"
+                        ng-change="ctrl.onendchange()"
+                        ng-required="true"
+                    ></md-datepicker>
                 </div>
             </form>
         </div>

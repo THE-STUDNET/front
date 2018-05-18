@@ -25,7 +25,10 @@
   "homepage": "https://github.com/THE-STUDNET/front-server#readme",
   "dependencies": {
     "angular": "^1.6.7",
+    "angular-animate": "^1.7.0",
+    "angular-aria": "^1.7.0",
     "angular-chart.js": "^1.1.1",
+    "angular-material": "^1.1.9",
     "angular-sanitize": "^1.6.7",
     "angular-translate": "^2.16.0",
     "angular-translate-loader-static-files": "^2.16.0",
@@ -87,6 +90,15 @@
         "quill"
       ]
     },
+    "angular-material": {
+      "src": "angular-material.min.js"
+    },
+    "angular-aria": {
+      "src": "angular-aria.min.js"
+    },
+    "angular-animate": {
+      "src": "angular-animate.min.js"
+    },
     "socket.io-client": {
       "browserify": true
     }
@@ -103,6 +115,9 @@
     ],
     "mapbox-gl": [
       "dist/mapbox-gl.css"
+    ],
+    "angular-material": [
+      "angular-material.min.css"
     ]
   },
   "devDependencies": {
